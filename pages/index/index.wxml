@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<swiper class="slides">
+  <swiper-item wx:for="{{slides}}" wx:key="id">
+    <navigator url="{{item.link}}" wx:if="{{item.link}}">
+      <image src="{{item.image}}" mode="aspectFill" />
+    </navigator>
+     <image src="{{item.image}}" mode="aspectFill" wx:else />
+  </swiper-item>
+</swiper>
+
+<view class="grids">
+  <navigator url="/pages/list/list?cat={{item.id}}" wx:for="{{categories}}" wx:key="id" class="item">
+    <image src="{{item.icon}}"></image>
+    <text>{{item.name}}</text>
+  </navigator>
+</view>
